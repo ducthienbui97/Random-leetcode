@@ -12,7 +12,7 @@ class Solution {
 public:
     pair<int,int> maxPath(TreeNode* root){
         if(root == nullptr)
-            return {-1<<30,0};
+            return {-(1<<30), 0};
         auto left = maxPath(root -> left);
         auto right = maxPath(root -> right);
         return {max(max(left.first,right.first), max(left.second,0) + max(right.second,0) + root -> val),
